@@ -30,8 +30,8 @@ fi
 
 # Download the image data.
 cd ./images
-echo "Downloading MSCOCO train images ..."
-curl -LO http://images.cocodataset.org/zips/train2017.zip
+#echo "Downloading MSCOCO train images ..."
+#curl -LO http://images.cocodataset.org/zips/train2017.zip
 echo "Downloading MSCOCO val images ..."
 curl -LO http://images.cocodataset.org/zips/val2017.zip
 
@@ -48,15 +48,15 @@ curl -LO http://images.cocodataset.org/annotations/annotations_trainval2017.zip
 echo "Finished downloading. Now extracting ..."
 
 # Unzip data
-echo "Extracting train images ..."
-unzip ../images/train2017.zip -d ../images
+#echo "Extracting train images ..."
+#unzip ../images/train2017.zip -d ../images
 echo "Extracting val images ..."
 unzip ../images/val2017.zip -d ../images
 echo "Extracting annotations ..."
 unzip ./annotations_trainval2017.zip
 
 echo "Removing zip files ..."
-rm ../images/train2017.zip
+#rm ../images/train2017.zip
 rm ../images/val2017.zip
 rm ./annotations_trainval2017.zip
 
