@@ -1,0 +1,1 @@
+python train.py --dataset 'COCO' --dataset_root '/gpfs/data/geraslab/sudarshini/EfficientDet.Pytorch/data/coco/' --batch_size 32 --multiprocessing-distributed
