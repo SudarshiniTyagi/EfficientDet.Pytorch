@@ -174,10 +174,10 @@ class BreastDataset(CustomCocoDetection):
             ann_file = "breasts/train_with_unknowns.json"
         elif set_type == "test":
             root = "/gpfs/data/geraslab/jp4989/data/2010_2017_cropped_images_hdf5/",
-            ann_file = "breasts/test_with_unknowns.json"
+            ann_file = "/gpfs/data/geraslab/sudarshini/rcnn_with_attention/datasets/breasts/test_with_unknowns.json"
         elif set_type == "val":
             root = "/gpfs/data/geraslab/jp4989/data/2010_2017_cropped_images_hdf5/",
-            ann_file = "breasts/val_with_unknowns.json"
+            ann_file = "/gpfs/data/geraslab/sudarshini/rcnn_with_attention/datasets/breasts/val_with_unknowns.json"
         super(BreastDataset, self).__init__(root, ann_file)
         self.biopsy_image_ratio = float(os.environ.get("BIOPSY_RATIO", 0.5))
         self.max_annotation_size = int(os.environ.get("MAX_ANNOTATION_SIZE", 0))
