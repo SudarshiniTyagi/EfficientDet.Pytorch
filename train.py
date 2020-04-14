@@ -34,7 +34,7 @@ from utils import EFFICIENTDET, get_state_dict
 from eval import evaluate, evaluate_coco
 
 parser = argparse.ArgumentParser(description='PyTorch ImageNet Training')
-parser.add_argument('--dataset', default='VOC', choices=['VOC', 'COCO'],
+parser.add_argument('--dataset', default='VOC', choices=['VOC', 'COCO', 'BreastCancer'],
                     type=str, help='VOC or COCO')
 parser.add_argument(
     '--dataset_root',
