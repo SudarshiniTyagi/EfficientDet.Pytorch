@@ -171,7 +171,7 @@ class BreastDataset(CustomCocoDetection):
     def __init__(self, ann_file=None, root=None, set_type="train", transforms=None):
         if set_type == "train":
             root = "/gpfs/data/geraslab/jp4989/data/2010_2017_cropped_images_hdf5/"
-            ann_file = "breasts/train_with_unknowns.json"
+            ann_file = "/gpfs/data/geraslab/sudarshini/rcnn_with_attention/datasets/breasts/train_with_unknowns.json"
         elif set_type == "test":
             root = "/gpfs/data/geraslab/jp4989/data/2010_2017_cropped_images_hdf5/",
             ann_file = "/gpfs/data/geraslab/sudarshini/rcnn_with_attention/datasets/breasts/test_with_unknowns.json"
