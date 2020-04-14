@@ -214,11 +214,10 @@ class BreastDataset(CustomCocoDetection):
         if self.max_annotation_size and self.split == "train":
             anno = [a for a in anno if a["bbox"][2] * a["bbox"][3] <= self.max_annotation_size]
 
-
-        if self.transforms is not None:
-            img, target = self.transforms(img, anno)
-
-        return img, anno
+        sample = {'img': img, 'annot': anno}
+        if self.transform:
+            sample = self.transforms(sample)
+        return sample
 
     def get_img_info(self, idx):
         img_id = self.id_to_img_map[idx]
