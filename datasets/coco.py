@@ -224,6 +224,8 @@ class BreastDataset(CustomCocoDetection):
         img_id = self.id_to_img_map[idx]
         img_data = self.coco.imgs[img_id]
         return img_data
+    def num_classes(self):
+        return 2
 
 if __name__ == '__main__':
     from augmentation import get_augumentation

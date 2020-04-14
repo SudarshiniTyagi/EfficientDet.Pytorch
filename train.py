@@ -29,7 +29,7 @@ from torch.utils.data import DataLoader
 
 from models.efficientdet import EfficientDet
 from models.losses import FocalLoss
-from datasets import VOCDetection, CocoDataset, get_augumentation, detection_collate, Resizer, Normalizer, Augmenter, collater
+from datasets import VOCDetection, CocoDataset, BreastDataset, get_augumentation, detection_collate, Resizer, Normalizer, Augmenter, collater
 from utils import EFFICIENTDET, get_state_dict
 from eval import evaluate, evaluate_coco
 
@@ -195,6 +195,24 @@ def main_worker(gpu, ngpus_per_node, args):
                     Normalizer(),
                     Resizer()]))
         args.num_class = train_dataset.num_classes()
+    elif(args.dataset == 'BreastCancer'):
+        train_dataset = BreastDataset(
+            root="None",
+            set_type="train",
+            transforms=transforms.Compose(
+                [
+                    Normalizer(),
+                    Augmenter(),
+                    Resizer()]))
+        valid_dataset = BreastDataset(
+            root="None",
+            set_type='val',
+            transforms=transforms.Compose(
+                [
+                    Normalizer(),
+                    Resizer()]))
+        args.num_class = train_dataset.num_classes()
+
 
     train_loader = DataLoader(train_dataset,
                               batch_size=args.batch_size,
