@@ -69,7 +69,7 @@ def detection_collate(batch):
 def collater(data):
     imgs = [s['img'] for s in data]
     annots = [s['annot'] for s in data]
-    scales = [s['scale'] for s in data]
+    # scales = [s['scale'] for s in data]
 
     imgs = torch.from_numpy(np.stack(imgs, axis=0))
 
